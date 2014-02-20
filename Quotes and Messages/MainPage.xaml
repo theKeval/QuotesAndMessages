@@ -6,6 +6,8 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:System.Windows.Controls"
+    xmlns:helper="clr-namespace:Quotes_and_Messages.Helper"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -14,6 +16,25 @@
     shell:SystemTray.IsVisible="True"
     shell:SystemTray.BackgroundColor="#2bbebc">
 
+    <phone:PhoneApplicationPage.Resources>
+
+        <DataTemplate x:Key="GridTemplate">
+            <!--<StackPanel Height="220" Width="200">-->
+            <ListBoxItem>
+                <Grid Height="220" Width="200" Background="{StaticResource DarkBlueTextBlock}"
+                      helper:TiltEffect.IsTiltEnabled="True">
+                    <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                           TextWrapping="Wrap" Foreground="White"
+                           Text="{Binding pubname}" FontSize="30" TextTrimming="WordEllipsis"
+                           Margin="10,10,0,0" />
+                </Grid>
+            </ListBoxItem>
+            <!--</StackPanel>-->
+        </DataTemplate>
+
+    </phone:PhoneApplicationPage.Resources>
+    
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource AppBackground}">
         <Grid.RowDefinitions>
@@ -55,9 +76,14 @@
                 <phone:PivotItem.Header>
                     <TextBlock Text="Categories" FontSize="50" />
                 </phone:PivotItem.Header>
-                
-                
-                
+
+                <phone:LongListSelector x:Name="lbxPublications" 
+                                    ItemTemplate="{StaticResource GridTemplate}"
+                                    LayoutMode="Grid" GridCellSize="210,230"
+                                    SelectionChanged="lbxPublications_SelectionChanged">
+
+                </phone:LongListSelector>
+
             </phone:PivotItem>
             
             <phone:PivotItem>

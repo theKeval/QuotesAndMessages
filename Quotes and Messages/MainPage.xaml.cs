@@ -45,6 +45,11 @@ namespace Quotes_and_Messages
             }
         }
 
+        private void lbxPublications_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
