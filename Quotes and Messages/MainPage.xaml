@@ -19,7 +19,6 @@
     <phone:PhoneApplicationPage.Resources>
 
         <DataTemplate x:Key="GridTemplate">
-            <!--<StackPanel Height="220" Width="200">-->
             <ListBoxItem>
                 <Grid Height="220" Width="200" Background="{StaticResource DarkBlueTextBlock}"
                       helper:TiltEffect.IsTiltEnabled="True">
@@ -29,7 +28,6 @@
                            Margin="10,10,0,0" />
                 </Grid>
             </ListBoxItem>
-            <!--</StackPanel>-->
         </DataTemplate>
 
     </phone:PhoneApplicationPage.Resources>
@@ -77,10 +75,10 @@
                     <TextBlock Text="Categories" FontSize="50" />
                 </phone:PivotItem.Header>
 
-                <phone:LongListSelector x:Name="lbxPublications" 
+                <phone:LongListSelector x:Name="lbxCategories" 
                                     ItemTemplate="{StaticResource GridTemplate}"
                                     LayoutMode="Grid" GridCellSize="210,230"
-                                    SelectionChanged="lbxPublications_SelectionChanged">
+                                    SelectionChanged="lbxCategories_SelectionChanged">
 
                 </phone:LongListSelector>
 

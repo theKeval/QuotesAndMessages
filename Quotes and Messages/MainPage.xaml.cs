@@ -45,7 +45,7 @@ namespace Quotes_and_Messages
             }
         }
 
-        private void lbxPublications_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lbxCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
