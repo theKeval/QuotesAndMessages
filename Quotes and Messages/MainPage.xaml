@@ -6,32 +6,32 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="clr-namespace:System.Windows.Controls"
+    
     xmlns:helper="clr-namespace:Quotes_and_Messages.Helper"
+    xmlns:controls="clr-namespace:Quotes_and_Messages.Controls"
+    
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="#2bbebc">
-
+    SupportedOrientations="Portrait" Orientation="Portrait">
+    <!--shell:SystemTray.IsVisible="False"
+    shell:SystemTray.BackgroundColor="#2bbebc"
+    shell:SystemTray.ForegroundColor="#1a7170"-->
+    
     <phone:PhoneApplicationPage.Resources>
-
         <DataTemplate x:Key="GridTemplate">
             <ListBoxItem>
                 <Grid Height="220" Width="200" Background="{StaticResource DarkBlueTextBlock}"
                       helper:TiltEffect.IsTiltEnabled="True">
                     <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left"
                            TextWrapping="Wrap" Foreground="White"
-                           Text="{Binding pubname}" FontSize="30" TextTrimming="WordEllipsis"
-                           Margin="10,10,0,0" />
+                           Text="{Binding}" FontSize="30" TextTrimming="WordEllipsis"
+                           Margin="10,10,0,5" />
                 </Grid>
             </ListBoxItem>
         </DataTemplate>
-
     </phone:PhoneApplicationPage.Resources>
-    
     
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource AppBackground}">
@@ -96,7 +96,10 @@
                 </phone:PivotItem.Header>
             </phone:PivotItem>
         </phone:Pivot>
-
+        
+        
+        <controls:BusyIndicator x:Name="ucBusy" Grid.RowSpan="2" />
+        
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)
