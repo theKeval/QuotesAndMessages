@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Quotes_and_Messages.Resources;
+using System.Net.NetworkInformation;
 
 namespace Quotes_and_Messages
 {
@@ -56,6 +57,34 @@ namespace Quotes_and_Messages
             }
 
         }
+
+
+        public static bool IsInternetAvailable
+        {
+            get
+            {
+                bool isNetwork = NetworkInterface.GetIsNetworkAvailable();
+                return isNetwork;
+
+                #region commented - old code
+                //var manualResetEvent = new ManualResetEvent(false);
+                //bool internetConnectionAvailable = true;
+                //DeviceNetworkInformation.ResolveHostNameAsync(new DnsEndPoint("microsoft.com", 80),
+                //networkInfo =>
+                //{
+                //    if (networkInfo.NetworkInterface == null)
+                //    {
+                //        internetConnectionAvailable = false;
+                //    }
+                //    manualResetEvent.Set();
+                //}, null);
+                //manualResetEvent.WaitOne(TimeSpan.FromMilliseconds(50));
+                //return internetConnectionAvailable;
+                #endregion
+            }
+        }
+
+
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated

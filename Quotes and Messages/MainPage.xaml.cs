@@ -37,6 +37,13 @@ namespace Quotes_and_Messages
         {
             base.OnNavigatedTo(e);
 
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                count = 0;
+                lstQuotes = null;
+                lstQuotes = new List<string>();
+            }
+
             lbxCategories.ItemsSource = lstCategories;
 
         }
@@ -44,17 +51,24 @@ namespace Quotes_and_Messages
         public static string selectedCategory;
         private void lbxCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lbxCategories.SelectedItem != null)
+            if (App.IsInternetAvailable)
             {
-                selectedCategory = ((string)lbxCategories.SelectedItem).ToLower();
+                if (lbxCategories.SelectedItem != null)
+                {
+                    selectedCategory = ((string)lbxCategories.SelectedItem).ToLower();
 
-                ucBusy.IsBusy = true;
+                    ucBusy.IsBusy = true;
 
-                get10Quotes(selectedCategory);
+                    get10Quotes(selectedCategory);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Looks like you are not connected with Internet.\nCheck your internet connection and try again.");
             }
         }
 
-        public static string RandomSingleQuote;
+        public string RandomSingleQuote;
         public List<string> lstQuotes = new List<string>();
         public int count = 0;
         private void webClient_TipsCompleted(object sender, DownloadStringCompletedEventArgs e)
@@ -82,10 +96,14 @@ namespace Quotes_and_Messages
                 else if (count == 10)
                 {
                     ucBusy.IsBusy = false;
-
+                    
                     NavigationService.Navigate(new Uri("/ListOfQuotes.xaml", UriKind.Relative), lstQuotes);
                 }
-
+                else
+                {
+                    ucBusy.IsBusy = false;
+                    MessageBox.Show("Something went wrong.");
+                }
             }
         }
 
