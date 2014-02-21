@@ -55,10 +55,29 @@ namespace Quotes_and_Messages
             {
                 if (lbxCategories.SelectedItem != null)
                 {
-                    selectedCategory = ((string)lbxCategories.SelectedItem).ToLower();
+                    switch (((string)lbxCategories.SelectedItem).ToLower())
+                    {
+                        case "dictionary of the vulgar tongue":
+                            selectedCategory = "1811 dictionary of the vulgar tongue ";
+                            break;
+
+                        case "songs poems":
+                            selectedCategory = "songs_poems";
+                            break;
+
+                        case "men women":
+                            selectedCategory = "men_women";
+                            break;
+
+                        case "humorix stories":
+                            break;
+
+                        default:
+                            selectedCategory = ((string)lbxCategories.SelectedItem).ToLower();
+                            break;
+                    }
 
                     ucBusy.IsBusy = true;
-
                     get10Quotes(selectedCategory);
                 }
             }
@@ -81,7 +100,7 @@ namespace Quotes_and_Messages
                 string[] splitedString = MainQuote.Split('[');
                 RandomSingleQuote = splitedString[0];
 
-                if(RandomSingleQuote.Contains("&quot;"))
+                if (RandomSingleQuote.Contains("&quot;"))
                 {
                     RandomSingleQuote = RandomSingleQuote.Replace("&quot;", " \" ");
                 }
@@ -96,7 +115,7 @@ namespace Quotes_and_Messages
                 else if (count == 10)
                 {
                     ucBusy.IsBusy = false;
-                    
+
                     NavigationService.Navigate(new Uri("/ListOfQuotes.xaml", UriKind.Relative), lstQuotes);
                 }
                 else
