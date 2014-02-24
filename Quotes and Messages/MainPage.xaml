@@ -104,14 +104,65 @@
 
             <phone:PivotItem>
                 <phone:PivotItem.Header>
-                    <TextBlock Text="Options" FontSize="50" />
+                    <TextBlock Text="About..." FontSize="50" />
                 </phone:PivotItem.Header>
-                
-                <Grid>
-                    <!--<HyperlinkButton Content="Rate this app" HorizontalAlignment="Left" Height="57" Margin="92,69,0,0" VerticalAlignment="Top" Width="218"/>-->
 
-                </Grid>
-                
+                <ScrollViewer>
+                    <Grid>
+                        <!--<HyperlinkButton Content="Rate this app" HorizontalAlignment="Left" Height="57" Margin="92,69,0,0" VerticalAlignment="Top" Width="218"/>-->
+                        <StackPanel>
+
+                            <Grid>
+                                <StackPanel>
+
+                                    <TextBlock Text="Developed By :-" FontSize="25" HorizontalAlignment="Center" TextDecorations="Underline" FontWeight="Bold"/>
+                                    <TextBlock FontSize="5" />
+                                    <TextBlock Text="Keval S. Langalia" FontSize="20" HorizontalAlignment="Center" />
+                                    <TextBlock FontSize="15" />
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Image x:Name="img_fb" Tap="img_fb_Tap" Source="/Assets/facebookIcon_small.png" Margin="10 0" Stretch="None" />
+                                        <Image x:Name="img_twitter" Tap="img_twitter_Tap" Source="/Assets/icon_twitter_small.png" Margin="10 0" Stretch="None" />
+                                        <Image x:Name="img_linkedIn" Tap="img_linkedIn_Tap" Source="/Assets/linkedin-icon_small.png" Margin="10 0" Stretch="None" />
+                                        <Image x:Name="img_Gplus" Tap="img_Gplus_Tap" Source="/Assets/Google-plus-logo.png" Margin="10 0" Stretch="None" />
+                                    </StackPanel>
+                                    <TextBlock FontSize="5" />
+                                    <HyperlinkButton Tap="mySiteLink_Tap" x:Name="mySiteLink" Content="www.TheKeval.com" HorizontalAlignment="Center" />
+                                    <TextBlock FontSize="10" />
+
+                                    <Button x:Name="btnRateApp" Content="Rate this App" FontSize="20" HorizontalAlignment="Center"
+                                            Background="{StaticResource OrangeButton}" helper:TiltEffect.IsTiltEnabled="True"
+                                            Tap="btnRateApp_Tap"/>
+
+                                    <Button x:Name="btnShareApp" Content="Share this App" FontSize="20" HorizontalAlignment="Center"
+                                            Background="{StaticResource OrangeButton}" helper:TiltEffect.IsTiltEnabled="True"
+                                            Tap="btnShareApp_Tap"/>
+
+                                    <Button x:Name="btnMoreApps" Content="More Apps" FontSize="20" HorizontalAlignment="Center"
+                                            Background="{StaticResource OrangeButton}" helper:TiltEffect.IsTiltEnabled="True"
+                                            Tap="btnMoreApps_Tap"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <TextBlock Text="Description :-" FontSize="25"/>
+                            <TextBlock FontSize="10" />
+                            <TextBlock  TextWrapping="Wrap" FontSize="18">
+                                <Run Text="Do you love Quotes..? Then this application is Definitely for you. What I've faced in other quotes and messages apps are limited number of Messages. Though that limited number might be more than thousand."/>
+                            </TextBlock>
+                            <TextBlock FontSize="10" />
+                            <TextBlock TextWrapping="Wrap" FontSize="18">
+                                <Run Text="To overcome that limitation I thought to make an app which updates on regular basis, so that you do not need to see fixed number of messages and quotes. One more benefit of this app is, you need not to update this app to get new quotes." />
+                            </TextBlock>
+                            <TextBlock FontSize="15" />
+                            <TextBlock Text="This App is Powered by Windows Azure" FontSize="23" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="15" />
+                            
+                            
+                            
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+
             </phone:PivotItem>
         </phone:Pivot>
 

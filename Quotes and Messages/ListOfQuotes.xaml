@@ -6,17 +6,18 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Quotes_and_Messages.Controls"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d">
     
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" Mode="Minimized">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="Next Page" Click="btnNextQuotes_click" />
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" >
+            <shell:ApplicationBarIconButton x:Name="AppBarBtn_nextPage" IconUri="/Assets/AppBar/download.png" Text="Next Page" Click="btnNextQuotes_click" />
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
     
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource AppBackground}">
@@ -36,7 +37,7 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox x:Name="lbxQuotes">
+            <ListBox x:Name="lbxQuotes" SelectionChanged="lbxQuotes_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <!--<Grid Background="{StaticResource DarkBlueTextBlock}" Opacity="0.5">-->
@@ -46,6 +47,8 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
+
+        <controls:BusyIndicator x:Name="ucBusy" Grid.RowSpan="2" />
     </Grid>
 
 </phone:PhoneApplicationPage>

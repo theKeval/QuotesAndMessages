@@ -8,6 +8,8 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Quotes_and_Messages.Resources;
 using System.Net.NetworkInformation;
+using System.Threading;
+using System.Net;
 
 namespace Quotes_and_Messages
 {
@@ -81,6 +83,26 @@ namespace Quotes_and_Messages
                 //manualResetEvent.WaitOne(TimeSpan.FromMilliseconds(50));
                 //return internetConnectionAvailable;
                 #endregion
+            }
+        }
+
+        public static bool IsInternetAvailable_2nd
+        {
+            get
+            {
+                var manualResetEvent = new ManualResetEvent(false);
+                bool internetConnectionAvailable = true;
+                Microsoft.Phone.Net.NetworkInformation.DeviceNetworkInformation.ResolveHostNameAsync(new DnsEndPoint("microsoft.com", 80),
+                networkInfo =>
+                {
+                    if (networkInfo.NetworkInterface == null)
+                    {
+                        internetConnectionAvailable = false;
+                    }
+                    manualResetEvent.Set();
+                }, null);
+                manualResetEvent.WaitOne(TimeSpan.FromMilliseconds(50));
+                return internetConnectionAvailable;
             }
         }
 

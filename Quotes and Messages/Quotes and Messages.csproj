@@ -140,9 +140,17 @@
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\AppBar\download.png" />
     <Content Include="Assets\AppBar\upload.png" />
+    <Content Include="Assets\AppBar\WP_appBar_NextIcon.png" />
+    <Content Include="Assets\AppBar\WP_appBar_CopyIcon.png" />
+    <Content Include="Assets\AppBar\WP_appBar_SMSIcon.png" />
+    <Content Include="Assets\AppBar\WP_appBar_ShareIcon.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\facebookIcon_small.png" />
+    <Content Include="Assets\Google-plus-logo.png" />
+    <Content Include="Assets\icon_twitter_small.png" />
+    <Content Include="Assets\linkedin-icon_small.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
