@@ -28,5 +28,10 @@ namespace Quotes_and_Messages
 
             tBlockHeader.Text = MainPage.selectedCategory;
         }
+
+        private void btnNextQuotes_click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

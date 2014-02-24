@@ -70,7 +70,18 @@ namespace Quotes_and_Messages
                             break;
 
                         case "humorix stories":
+                            selectedCategory = "humorix_stories";
                             break;
+
+                        case "joel on software":
+                            selectedCategory = "joel_on_software";
+                            break;
+
+                        case "john heywood":
+                            selectedCategory = "john_heywood";
+                            break;
+
+                            
 
                         default:
                             selectedCategory = ((string)lbxCategories.SelectedItem).ToLower();
@@ -124,6 +135,10 @@ namespace Quotes_and_Messages
                     MessageBox.Show("Something went wrong.");
                 }
             }
+            else
+            {
+                MessageBox.Show(e.Error.ToString());
+            }
         }
 
         public List<string> get10Quotes(string Category)
@@ -133,11 +148,64 @@ namespace Quotes_and_Messages
             var webClient = new WebClient();
 
             webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(webClient_TipsCompleted);
-            webClient.DownloadStringAsync(new Uri("http://www.iheartquotes.com/api/v1/random?source=" + Category + "&max_lines=5"));
+            webClient.DownloadStringAsync(new Uri("http://www.iheartquotes.com/api/v1/random?source=" + Category));
             //}
             return lstQuotes;
         }
 
+
+        public void RandomQuote()
+        {
+            try
+            {
+                if (App.IsInternetAvailable)
+                {
+                    ucBusy.IsBusy = true;
+
+                    var webClient = new WebClient();
+
+                    webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(webClient_RandomQuoteGenerated);
+                    webClient.DownloadStringAsync(new Uri("http://iheartquotes.com/api/v1/random?max_lines=4"));
+                }
+                else
+                {
+                    MessageBox.Show("Looks like you are not connected to Internet.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void webClient_RandomQuoteGenerated(object sender, DownloadStringCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                var RandomQuote = e.Result;
+                string[] splitedString = RandomQuote.Split('[');
+                var QuoteToDisplay = splitedString[0];
+
+                if (QuoteToDisplay.Contains("&quot;"))
+                {
+                    QuoteToDisplay = QuoteToDisplay.Replace("&quot;", " \" ");
+                }
+
+                tBlockRandomQuote.Text = QuoteToDisplay;
+
+                ucBusy.IsBusy = false;
+            }
+            else
+            {
+                ucBusy.IsBusy = false;
+                MessageBox.Show(e.Error.ToString());
+            }
+        }
+
+        private void BtnGenerateRandomQuote_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            RandomQuote();
+        }
 
 
         // Sample code for building a localized ApplicationBar
