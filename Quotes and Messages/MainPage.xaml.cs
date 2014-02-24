@@ -146,7 +146,7 @@ namespace Quotes_and_Messages
                 else
                 {
                     ucBusy.IsBusy = false;
-                    MessageBox.Show("No Internet", "Quotes & Messages", MessageBoxButton.OK);
+                    MessageBox.Show("No internet available.", "Quotes & Messages", MessageBoxButton.OK);
                 }
                 
             }
@@ -180,7 +180,7 @@ namespace Quotes_and_Messages
                 }
                 else
                 {
-                    MessageBox.Show("Looks like you are not connected to Internet.");
+                    MessageBox.Show("No internet available.", "Quotes & Messages", MessageBoxButton.OK);
                 }
             }
             catch (Exception ex)
@@ -272,6 +272,7 @@ namespace Quotes_and_Messages
         {
             MarketplaceSearchTask myApps = new MarketplaceSearchTask();
             myApps.SearchTerms = "Keval Langalia";
+            myApps.Show();
         }
 
         private void btnShareApp_Tap(object sender, System.Windows.Input.GestureEventArgs e)
