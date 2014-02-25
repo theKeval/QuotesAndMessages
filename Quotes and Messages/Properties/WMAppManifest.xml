@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{2cdec378-23ec-41b7-8375-7aeee87f64b1}" Title="Quotes and Messages" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Quotes_and_Messages author" Description="Sample description" Publisher="Quotes_and_Messages" PublisherID="{62e56826-eccb-4b58-b6cb-9e94616bf110}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+  <App xmlns="" ProductID="{2cdec378-23ec-41b7-8375-7aeee87f64b1}" Title="I ♥ Quotes" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Quotes_and_Messages author" Description="Sample description" Publisher="Quotes_and_Messages" PublisherID="{62e56826-eccb-4b58-b6cb-9e94616bf110}">
+    <IconPath IsRelative="true" IsResource="false">Assets\AppIcons\Transperent-White-logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
-      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
-      <Capability Name="ID_CAP_SENSORS" />
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
@@ -15,22 +12,23 @@
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="Quotes_and_MessagesToken" TaskName="_default">
-        <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+        <TemplateCycle>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\AppIcons\Transperent-White-logo.png</SmallImageURI>
+          <Title>i ♥ Quotes</Title>
+          <Photo01ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Life-is-too-short-to-waste-on-hating-other-people.png</Photo01ImageURI>
+          <Photo02ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Motivational-Wallpaper-640x360.png</Photo02ImageURI>
+          <Photo03ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Positive-Thinking-Quotes-300x330.png</Photo03ImageURI>
+          <Photo04ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Quotes-On-Self-640x360.png</Photo04ImageURI>
+          <Photo05ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Quotes-On-Success-640x360.png</Photo05ImageURI>
+          <Photo06ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\short-dance-quotes-tumblr-116.png</Photo06ImageURI>
+          <Photo07ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\short-inspirational-quotes.png</Photo07ImageURI>
+          <Photo08ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Short-Inspirational-Quotes-640x360.png</Photo08ImageURI>
+          <Photo09ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\steve-jobs-quote-wallpaper-design-brightoak.png</Photo09ImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>Quotes_and_Messages</Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI>
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
-          <DeviceLockImageURI>
+          <HasLarge>True</HasLarge>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
-        </TemplateFlip>
+        </TemplateCycle>
       </PrimaryToken>
     </Tokens>
     <ScreenResolutions>

@@ -97,6 +97,7 @@
       <DependentUpon>BusyIndicator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\Extensions.cs" />
+    <Compile Include="Helper\IsolatedStorageKeys.cs" />
     <Compile Include="Helper\TiltEffect.cs" />
     <Compile Include="ListOfQuotes.xaml.cs">
       <DependentUpon>ListOfQuotes.xaml</DependentUpon>
@@ -131,6 +132,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -144,6 +146,7 @@
     <Content Include="Assets\AppBar\WP_appBar_CopyIcon.png" />
     <Content Include="Assets\AppBar\WP_appBar_SMSIcon.png" />
     <Content Include="Assets\AppBar\WP_appBar_ShareIcon.png" />
+    <Content Include="Assets\AppIcons\Transperent-White-logo.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -151,6 +154,16 @@
     <Content Include="Assets\Google-plus-logo.png" />
     <Content Include="Assets\icon_twitter_small.png" />
     <Content Include="Assets\linkedin-icon_small.png" />
+    <Content Include="Assets\TilesImages\Life-is-too-short-to-waste-on-hating-other-people.png" />
+    <Content Include="Assets\TilesImages\Motivational-Wallpaper-640x360.png" />
+    <Content Include="Assets\TilesImages\Positive-Thinking-Quotes-300x330.png" />
+    <Content Include="Assets\TilesImages\Quotes-On-Self-640x360.png" />
+    <Content Include="Assets\TilesImages\Quotes-On-Success-640x360.png" />
+    <Content Include="Assets\TilesImages\short-dance-quotes-tumblr-116.png" />
+    <Content Include="Assets\TilesImages\Short-Inspirational-Quotes-640x360.png" />
+    <Content Include="Assets\TilesImages\short-inspirational-quotes.png" />
+    <Content Include="Assets\TilesImages\short-life-quote-1.png" />
+    <Content Include="Assets\TilesImages\steve-jobs-quote-wallpaper-design-brightoak.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -166,12 +179,26 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="SplashScreenImage.Screen-WVGA.jpg" />
+    <Content Include="SplashScreenImage.Screen-720p.jpg" />
+    <Content Include="SplashScreenImage.Screen-WXGA.jpg" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

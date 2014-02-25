@@ -9,6 +9,8 @@
     
     xmlns:helper="clr-namespace:Quotes_and_Messages.Helper"
     xmlns:controls="clr-namespace:Quotes_and_Messages.Controls"
+    BackKeyPress="PhoneApplicationPage_BackKeyPress"
+    xmlns:msgBox ="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -167,6 +169,14 @@
         </phone:Pivot>
 
 
+        <!--<msgBox:CustomMessageBox Caption="i ♥ Quotes"
+                                 Content="this is content"
+                                 FontSize="25" Message="This is message"
+                                 Title="this is title"
+                                 
+                                 RightButtonContent="Exit"
+                                 LeftButtonContent="Rate 5 Star" />-->
+        
         <controls:BusyIndicator x:Name="ucBusy" Grid.RowSpan="2" />
 
         <!--Uncomment to see an alignment grid to help ensure your controls are

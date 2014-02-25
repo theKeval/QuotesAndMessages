@@ -9,10 +9,13 @@
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:Quotes_and_Messages" x:Key="LocalizedStrings"/>
 
-        <SolidColorBrush Color="#7cc9cf" x:Key="AppBackground" />
+        <!--<SolidColorBrush Color="#7cc9cf" x:Key="AppBackground" />-->
+        <!--<SolidColorBrush Color="#2bbebc" x:Key="TopBarGridColor" />-->
+        <SolidColorBrush Color="LightSkyBlue" x:Key="AppBackground" />
+        <SolidColorBrush Color="DeepSkyBlue" x:Key="TopBarGridColor" />
+        
         <SolidColorBrush Color="#fe9c1e" x:Key="OrangeButton" />
-        <SolidColorBrush Color="#1a7170" x:Key="DarkBlueTextBlock" />
-        <SolidColorBrush Color="#2bbebc" x:Key="TopBarGridColor" />
+        <SolidColorBrush Color="SteelBlue" x:Key="DarkBlueTextBlock" />
         <SolidColorBrush Color="#FFCB8703" x:Key="PortfolioTableHeader" />
 
         <Style TargetType="TextBlock" x:Key="PivotHeaderStyle">

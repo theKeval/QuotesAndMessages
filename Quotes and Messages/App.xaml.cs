@@ -10,6 +10,9 @@ using Quotes_and_Messages.Resources;
 using System.Net.NetworkInformation;
 using System.Threading;
 using System.Net;
+using Microsoft.Phone.Scheduler;
+using System.IO.IsolatedStorage;
+using Quotes_and_Messages.Helper;
 
 namespace Quotes_and_Messages
 {
@@ -106,6 +109,39 @@ namespace Quotes_and_Messages
             }
         }
 
+        //public static bool isRated = false;
+
+
+
+        public static string isRated
+        {
+            get
+            {
+                if (IsolatedStorageSettings.ApplicationSettings.Contains(IsolatedStorageKeys.IsRatedKey))
+                {
+                    return (string)IsolatedStorageSettings.ApplicationSettings[IsolatedStorageKeys.IsRatedKey];
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            set
+            {
+                if (IsolatedStorageSettings.ApplicationSettings.Contains(IsolatedStorageKeys.IsRatedKey))
+                {
+                    IsolatedStorageSettings.ApplicationSettings[IsolatedStorageKeys.IsRatedKey] = value;
+                }
+                else
+                {
+                    IsolatedStorageSettings.ApplicationSettings.Add(IsolatedStorageKeys.IsRatedKey, value);
+                    IsolatedStorageSettings.ApplicationSettings.Save();
+                }
+            }
+        }
+
+
+
 
 
         // Code to execute when the application is launching (eg, from Start)
@@ -118,6 +154,29 @@ namespace Quotes_and_Messages
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            #region live tile try - commented
+            //            PeriodicTask tileUpdaterPeriodicTask;
+
+//            string taskName = "LiveTileUpdater";
+
+//            tileUpdaterPeriodicTask = ScheduledActionService.Find(taskName) as PeriodicTask;
+
+//            if (tileUpdaterPeriodicTask != null)
+//            {
+//                ScheduledActionService.Remove(taskName);
+//                return;
+//            }
+
+//            tileUpdaterPeriodicTask = new PeriodicTask(taskName);
+//            tileUpdaterPeriodicTask.Description = "CameronHeadcovers.com Tile Updater";
+
+//            ScheduledActionService.Add(tileUpdaterPeriodicTask);
+//#if DEBUG
+//ScheduledActionService.LaunchForTest(
+//taskName,
+//TimeSpan.FromSeconds(10));
+            //#endif
+            #endregion
         }
 
         // Code to execute when the application is deactivated (sent to background)

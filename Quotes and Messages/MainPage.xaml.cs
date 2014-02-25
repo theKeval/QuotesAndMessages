@@ -82,7 +82,7 @@ namespace Quotes_and_Messages
                             selectedCategory = "john_heywood";
                             break;
 
-                            
+
 
                         default:
                             selectedCategory = ((string)lbxCategories.SelectedItem).ToLower();
@@ -148,7 +148,7 @@ namespace Quotes_and_Messages
                     ucBusy.IsBusy = false;
                     MessageBox.Show("No internet available.", "Quotes & Messages", MessageBoxButton.OK);
                 }
-                
+
             }
         }
 
@@ -286,7 +286,100 @@ namespace Quotes_and_Messages
             shareLinkTask.Show();
         }
 
-        
+        private void PhoneApplicationPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //e.Cancel = true;    // if don't want to close the app then put "e.cancel = true"
+
+            //if (!string.IsNullOrEmpty(App.isRated))
+            if (!(App.isRated == "Rated"))
+            {
+                #region show Rating Dialog
+
+                IAsyncResult result = Microsoft.Xna.Framework.GamerServices.Guide.BeginShowMessageBox(
+                                      "i ♥ Quotes",
+                                      "We'd love you to Rate our App 5 Stars.\n\nShowing us some love on the store helps us to continue to work on the app and make things even better..!",
+                                      new string[] { "Rate 5 Star", "Exit" },
+                                      0,
+                                      Microsoft.Xna.Framework.GamerServices.MessageBoxIcon.None,
+                                      null,
+                                      null);
+
+                result.AsyncWaitHandle.WaitOne();
+
+                int? choice = Microsoft.Xna.Framework.GamerServices.Guide.EndShowMessageBox(result);
+                if (choice.HasValue)
+                {
+                    if (choice.Value == 0)
+                    {
+                        //User clicks on the first button - Rate button click
+
+                        App.isRated = "Rated";
+
+                        MarketplaceReviewTask RateTask = new MarketplaceReviewTask();
+                        RateTask.Show();
+                    }
+                    else if (choice.Value == 1)
+                    {
+                        //User clicks on the second button - exit button click
+
+
+                    }
+                }
+
+                #endregion
+            }
+            
+
+            #region Commented - CustomeMessageBox by Windows Phone Toolkit
+            //CustomMessageBox messageBox = new CustomMessageBox()
+            //{
+            //    Title = "i ♥ Quotes", //your title
+            //    Message = "Please Rate this App..!!!", //your message
+            //    LeftButtonContent = "Rate 5 Star",
+            //    RightButtonContent = "Exit", // you can change this right and left button content
+            //};
+
+            //messageBox.Show();
+
+            //messageBox.Dismissed += (s2, e2) =>
+            //{
+            //    switch (e2.Result)
+            //    {
+            //        case CustomMessageBoxResult.RightButton:
+            //            //here your function for right button
+
+            //            MarketplaceReviewTask RateTask = new MarketplaceReviewTask();
+            //            RateTask.Show();
+            //            break;
+
+            //        case CustomMessageBoxResult.LeftButton:
+            //            //here your function for left button
+
+
+            //            break;
+
+            //        default:
+            //            break;
+            //    }
+            //};
+            #endregion
+
+            #region Commented - Default MessageBox
+            //MessageBoxResult mb = MessageBox.Show("Please Rate this App..!!!", "i ♥ Quotes", MessageBoxButton.OKCancel);
+
+            //if (mb == MessageBoxResult.OK)
+            //{
+            //    MarketplaceReviewTask RateTask = new MarketplaceReviewTask();
+            //    RateTask.Show();
+            //}
+            //else
+            //{
+            //    //e.Cancel = true;
+            //}
+            #endregion
+        }
+
+
 
 
         // Sample code for building a localized ApplicationBar
