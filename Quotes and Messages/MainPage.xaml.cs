@@ -26,8 +26,8 @@ namespace Quotes_and_Messages
 
         public static List<string> lstCategories = new List<string>()
         {
-            "anonymous", "Why Why Why", "Wisdom", "Art", "Work", "Friends", "Computation", "Education", "Science",
-            "Technology", "Computers", "Macintosh", "Love", "Songs Poems", "Osho", "Albert Einstein", "Shakespeare",
+            "Anonymous", "Why Why Why", "Wisdom", "Love", "Shakespeare", "Art", "Work", "Friends", "Computation", "Education", "Science",
+            "Technology", "Computers", "Macintosh", "Songs Poems", "Osho", "Albert Einstein",
             "People", "Men Women", "Kids", "Pets", "Politics", "Sports", "Math", "Medicine", "Holygrail", "News",
             "Hogfather", "Law Liberty", "Literature", "Lords", "Definitions", "Dictionary", "Military", "Food",
             "Fortunes", "Humorix Stories", "Joel on Software", "Cryptonomicon", "Children of Dune", "Startrek",
@@ -95,7 +95,7 @@ namespace Quotes_and_Messages
             }
             else
             {
-                MessageBox.Show("No Internet.", "Quotes & Messages", MessageBoxButton.OK);
+                MessageBox.Show("No Internet.", "I ♥ Quotes", MessageBoxButton.OK);
             }
         }
 
@@ -141,12 +141,13 @@ namespace Quotes_and_Messages
                 if (App.IsInternetAvailable_2nd)
                 {
                     ucBusy.IsBusy = false;
-                    MessageBox.Show(e.Error.ToString());
+                    //MessageBox.Show(e.Error.ToString());
+                    MessageBox.Show("No Internet available.", "I ♥ Quotes", MessageBoxButton.OK);
                 }
                 else
                 {
                     ucBusy.IsBusy = false;
-                    MessageBox.Show("No internet available.", "Quotes & Messages", MessageBoxButton.OK);
+                    MessageBox.Show("No internet available.", "I ♥ Quotes", MessageBoxButton.OK);
                 }
 
             }
@@ -180,7 +181,7 @@ namespace Quotes_and_Messages
                 }
                 else
                 {
-                    MessageBox.Show("No internet available.", "Quotes & Messages", MessageBoxButton.OK);
+                    MessageBox.Show("No internet available.", "I ♥ Quotes", MessageBoxButton.OK);
                 }
             }
             catch (Exception ex)
@@ -211,12 +212,13 @@ namespace Quotes_and_Messages
                 if (App.IsInternetAvailable_2nd)
                 {
                     ucBusy.IsBusy = false;
-                    MessageBox.Show(e.Error.ToString());
+                    //MessageBox.Show(e.Error.ToString());
+                    MessageBox.Show("No Internet.", "I ♥ Quotes", MessageBoxButton.OK);
                 }
                 else
                 {
                     ucBusy.IsBusy = false;
-                    MessageBox.Show("No Internte", "Quotes & Messages", MessageBoxButton.OK);
+                    MessageBox.Show("No Internet.", "I ♥ Quotes", MessageBoxButton.OK);
                 }
             }
         }

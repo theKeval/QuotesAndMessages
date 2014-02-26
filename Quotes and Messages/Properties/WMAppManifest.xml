@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{2cdec378-23ec-41b7-8375-7aeee87f64b1}" Title="I ♥ Quotes" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Quotes_and_Messages author" Description="Sample description" Publisher="Quotes_and_Messages" PublisherID="{62e56826-eccb-4b58-b6cb-9e94616bf110}">
-    <IconPath IsRelative="true" IsResource="false">Assets\AppIcons\Transperent-White-logo.png</IconPath>
+  <App xmlns="" ProductID="{2cdec378-23ec-41b7-8375-7aeee87f64b1}" Title="I ♥ Quotes" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Keval S. Langalia" Description="Do you love Quotes..? Then this application is Definitely for you." Publisher="Keval S. Langalia" PublisherID="{62e56826-eccb-4b58-b6cb-9e94616bf110}">
+    <IconPath IsRelative="true" IsResource="false">Assets\AppIcons\Transperent-White-logo(160x160).png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
@@ -13,7 +13,7 @@
     <Tokens>
       <PrimaryToken TokenID="Quotes_and_MessagesToken" TaskName="_default">
         <TemplateCycle>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\AppIcons\Transperent-White-logo.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\AppIcons\Transperent-White-logo(160x160).png</SmallImageURI>
           <Title>i ♥ Quotes</Title>
           <Photo01ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Life-is-too-short-to-waste-on-hating-other-people.png</Photo01ImageURI>
           <Photo02ImageURI IsRelative="true" IsResource="false">Assets\TilesImages\Motivational-Wallpaper-640x360.png</Photo02ImageURI>

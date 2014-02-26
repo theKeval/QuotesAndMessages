@@ -146,7 +146,7 @@
     <Content Include="Assets\AppBar\WP_appBar_CopyIcon.png" />
     <Content Include="Assets\AppBar\WP_appBar_SMSIcon.png" />
     <Content Include="Assets\AppBar\WP_appBar_ShareIcon.png" />
-    <Content Include="Assets\AppIcons\Transperent-White-logo.png" />
+    <Content Include="Assets\AppIcons\Transperent-White-logo%28160x160%29.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -162,7 +162,6 @@
     <Content Include="Assets\TilesImages\short-dance-quotes-tumblr-116.png" />
     <Content Include="Assets\TilesImages\Short-Inspirational-Quotes-640x360.png" />
     <Content Include="Assets\TilesImages\short-inspirational-quotes.png" />
-    <Content Include="Assets\TilesImages\short-life-quote-1.png" />
     <Content Include="Assets\TilesImages\steve-jobs-quote-wallpaper-design-brightoak.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

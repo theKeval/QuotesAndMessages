@@ -56,11 +56,11 @@ namespace Quotes_and_Messages
             if (!string.IsNullOrEmpty(selectedQuote))
             {
                 Clipboard.SetText(selectedQuote);
-                MessageBox.Show("Quote Copied to clipboard.", "Quotes & Messages", MessageBoxButton.OK);
+                MessageBox.Show("Quote Copied to clipboard.", "i ♥ Quotes", MessageBoxButton.OK);
             }
             else
             {
-                MessageBox.Show("Select a quote first.", "Quotes & Messages", MessageBoxButton.OK);
+                MessageBox.Show("Select a quote first.", "i ♥ Quotes", MessageBoxButton.OK);
             }
         }
 
@@ -76,7 +76,7 @@ namespace Quotes_and_Messages
             }
             else
             {
-                MessageBox.Show("Select any Quote first.", "Quotes & Messages", MessageBoxButton.OK);
+                MessageBox.Show("Select any Quote first.", "i ♥ Quotes", MessageBoxButton.OK);
             }
             
             //throw new NotImplementedException();
@@ -101,7 +101,7 @@ namespace Quotes_and_Messages
             }
             else
             {
-                MessageBox.Show("Select any Quote first.", "Quotes & Messages", MessageBoxButton.OK);
+                MessageBox.Show("Select any Quote first.", "i ♥ Quotes", MessageBoxButton.OK);
             }
         }
 
@@ -200,7 +200,7 @@ namespace Quotes_and_Messages
                     ucBusy.IsBusy = false;
                     nextPage.IsEnabled = true;
 
-                    MessageBox.Show("No Internet", "Quotes & Messages", MessageBoxButton.OK);
+                    MessageBox.Show("No Internet", "i ♥ Quotes", MessageBoxButton.OK);
                 }
             }
         }
