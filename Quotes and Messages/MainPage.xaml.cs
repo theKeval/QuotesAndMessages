@@ -245,7 +245,7 @@ namespace Quotes_and_Messages
         private void img_linkedIn_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             var wbt = new WebBrowserTask();
-            wbt.URL = "http://in.linkedin.com/in/kevallangalia";
+            wbt.URL = "http://www.linkedin.com/in/kevallangalia";
             wbt.Show();
         }
 
@@ -281,8 +281,8 @@ namespace Quotes_and_Messages
         {
             ShareLinkTask shareLinkTask = new ShareLinkTask()
             {
-                Title = "Quotes and Messages App",
-                LinkUri = new Uri("http://www.windowsphone.com/en-US/store/publishers?publisherId=Keval%2BLangalia", UriKind.Absolute),
+                Title = "i ♥ Quotes",
+                LinkUri = new Uri("http://www.windowsphone.com/s?appid=4d6687c9-e74f-464d-8e6c-b59529b71e46", UriKind.Absolute),
                 Message = "Try this App. It has unlimited number of great Quotes and Messages."
             };
             shareLinkTask.Show();
