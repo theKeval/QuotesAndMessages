@@ -96,11 +96,12 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="5*" />
                     </Grid.RowDefinitions>
-                    <Button x:Name="BtnGenRandomQuote" Content="Generate Random Quote" FontSize="25"
+                    <Button x:Name="BtnGenRandomQuote" Content="Your Lucky Quote" FontSize="25"
                             Tap="BtnGenerateRandomQuote_Tap"
                             Background="{StaticResource OrangeButton}" helper:TiltEffect.IsTiltEnabled="True"/>
-                    <TextBlock x:Name="tBlockRandomQuote" Grid.Row="1" VerticalAlignment="Center" Height="300"
-                               TextWrapping="Wrap" FontSize="30"/>
+                    <ScrollViewer Grid.Row="1" VerticalAlignment="Center">
+                        <TextBlock x:Name="tBlockRandomQuote" TextWrapping="Wrap" FontSize="30"/>
+                    </ScrollViewer>
                 </Grid>
             </phone:PivotItem>
 
@@ -158,9 +159,9 @@
                             <TextBlock FontSize="15" />
                             <TextBlock Text="This App is Powered by Windows Azure" FontSize="23" HorizontalAlignment="Center" />
                             <TextBlock FontSize="15" />
-                            
-                            
-                            
+
+
+
                         </StackPanel>
                     </Grid>
                 </ScrollViewer>
@@ -176,7 +177,7 @@
                                  
                                  RightButtonContent="Exit"
                                  LeftButtonContent="Rate 5 Star" />-->
-        
+
         <controls:BusyIndicator x:Name="ucBusy" Grid.RowSpan="2" />
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
